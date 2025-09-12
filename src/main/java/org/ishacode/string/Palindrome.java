@@ -7,31 +7,30 @@ public class Palindrome {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the string");
         String str = sc.next();
-        String og_str = str;
 
         //normal reverse method
-//        String rev = "";
-//        for(int i=str.length()-1; i>=0; i--){
-//            rev = rev + str.charAt(i);
-//        }
-//        if(og_str.equals(rev)){
-//            System.out.println("yes");
-//        }else{
-//            System.out.println("no");
-//        }
-
-        //last character matching method
-        int flag = 0;
-        for(int i=0; i<str.length()/2; i++){
-            if(str.charAt(i) == str.charAt(str.length()-(i+1))){
-                flag = 1;
-            }
+        String rev = "";
+        for(int i=str.length()-1; i>=0; i--){
+            rev = rev + str.charAt(i);
         }
-        if(flag == 1){
+        if(str.equals(rev)){
             System.out.println("yes");
         }else{
             System.out.println("no");
         }
+
+        //last character matching method
+//        int flag = 0;
+//        for(int i=0; i<str.length()/2; i++){
+//            if(str.charAt(i) == str.charAt(str.length()-(i+1))){
+//                flag = 1;
+//            }
+//        }
+//        if(flag == 1){
+//            System.out.println("yes");
+//        }else{
+//            System.out.println("no");
+//        }
     }
 }
 

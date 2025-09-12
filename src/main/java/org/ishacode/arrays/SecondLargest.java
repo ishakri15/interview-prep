@@ -1,15 +1,33 @@
 package org.ishacode.arrays;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class SecondLargest {
-    public static void main(String[] args) {
-        int arr[] = {2,4,7,38,9,46,78,33};
-        int n = arr.length;
+    public static int secondLargest(int arr[]){
         Arrays.sort(arr);
-        //Second Largest Element
-        System.out.println(arr[n-2]);
-        //Second Smallest Element
-        System.out.println(arr[1]);
+        Set<Integer> set = new LinkedHashSet<Integer>();
+        for(int i=0; i<arr.length; i++){
+            set.add(arr[i]);
+        }
+        if(set.size()<2){
+            return -1;
+        }else{
+            List<Integer> list = new ArrayList<Integer>(set);
+            return list.get(list.size()-2);
+        }
+    }
+
+    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter length");
+//        int n = sc.nextInt();
+//        int arr[] = new int[n];
+//        for(int i=0; i<n; i++){
+//            arr[i]=sc.nextInt();
+//        }
+//        Arrays.sort(arr);
+//        System.out.println("Second largest element is "+arr[n-2]);
+        int arr[] = {10,10,10};
+        System.out.println(secondLargest(arr));
     }
 }
