@@ -3,6 +3,7 @@ package org.ishacode.arrays;
 import java.util.ArrayList;
 import java.util.List;
 
+//returning element
 public class TwoIntegerSum {
     public static List<Integer> sum(int arr[], int target){
         List list = new ArrayList();

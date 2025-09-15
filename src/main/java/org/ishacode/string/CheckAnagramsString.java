@@ -1,21 +1,17 @@
-package org.ishacode.arrays;
-
+package org.ishacode.string;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class CheckAnagrams {
-
+public class CheckAnagramsString {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int num1 = sc.nextInt();
-        int num2 = sc.nextInt();
-        System.out.println(isAnagram(num1,num2));
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        System.out.println(isAnagram(s1,s2));
     }
 
-    private static boolean isAnagram(int num1, int num2) {
-        String s1 = Integer.toString(num1);
-        String s2 = Integer.toString(num2);
+    private static boolean isAnagram(String s1, String s2) {
         if(s1.length() != s2.length()){
             return false;
         }

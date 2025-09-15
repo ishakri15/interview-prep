@@ -1,5 +1,5 @@
 package org.ishacode.arrays;
-
+// sum of left and right element = middle one
 public class ValidSubarrayOfSize3 {
     public static void main(String[] args) {
         int arr[] = {1,2,1,3,2,5,2};

@@ -2,7 +2,7 @@ package org.ishacode.arrays;
 
 import java.util.HashSet;
 import java.util.Set;
-
+// to find which elements are duplicates in a array
 public class DuplicateInArray {
     public static void main(String[] args) {
         int arr[] = {1,2,2,3,3,4,4,5};

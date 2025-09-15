@@ -6,7 +6,6 @@ import java.util.Scanner;
 //Given an array of numbers from 1 to n with one missing number, write a program to find the missing number.
 public class MissingNum {
     public static int missingNum(int arr[]) {
-        // code here
         int result = 0;
         Arrays.sort(arr);
         int max = arr[arr.length-1];

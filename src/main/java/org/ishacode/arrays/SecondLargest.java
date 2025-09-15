@@ -27,7 +27,7 @@ public class SecondLargest {
 //        }
 //        Arrays.sort(arr);
 //        System.out.println("Second largest element is "+arr[n-2]);
-        int arr[] = {10,10,10};
+        int arr[] = {10,30,20};
         System.out.println(secondLargest(arr));
     }
 }
