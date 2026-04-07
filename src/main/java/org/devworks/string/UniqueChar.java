@@ -2,7 +2,6 @@ package org.devworks.string;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 public class UniqueChar {
     public static void main(String[] args) {
         String str = "programming";
