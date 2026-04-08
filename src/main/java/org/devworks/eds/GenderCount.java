@@ -1,9 +1,11 @@
 package org.devworks.eds;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
-public class HighestSalaryByDepartment {
+public class GenderCount {
     public static void main(String[] args) {
         List<Employee> employees = Arrays.asList(
                 new Employee("Alice","F",21, "IT", 90000),
@@ -13,13 +15,7 @@ public class HighestSalaryByDepartment {
                 new Employee("Eve","F", 12,"Sales", 85000)
         );
 
-
-        Map<String, Optional<Employee>> collect = employees.stream().collect(
-                Collectors.groupingBy(Employee::getDepartment,
-                        Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
-
-        collect.forEach((dept,emp) ->
-                System.out.println("Department: " + dept + " | Top Earner: " + emp.get()));
+        Map<String, Long> collect = employees.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
+        System.out.print(collect);
     }
-
 }

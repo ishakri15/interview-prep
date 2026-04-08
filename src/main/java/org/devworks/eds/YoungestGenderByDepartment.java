@@ -1,9 +1,12 @@
 package org.devworks.eds;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class HighestSalaryByDepartment {
+public class YoungestGenderByDepartment {
     public static void main(String[] args) {
         List<Employee> employees = Arrays.asList(
                 new Employee("Alice","F",21, "IT", 90000),
@@ -13,13 +16,12 @@ public class HighestSalaryByDepartment {
                 new Employee("Eve","F", 12,"Sales", 85000)
         );
 
-
-        Map<String, Optional<Employee>> collect = employees.stream().collect(
-                Collectors.groupingBy(Employee::getDepartment,
-                        Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
-
-        collect.forEach((dept,emp) ->
-                System.out.println("Department: " + dept + " | Top Earner: " + emp.get()));
+        Employee minAge = employees.stream()
+                .filter(employee -> employee.getGender().equals("F") && employee.getDepartment().equals("IT"))
+                .min(Comparator.comparingInt(Employee::getAge)).get();
+System.out.print(minAge);
     }
+
+
 
 }

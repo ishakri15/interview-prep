@@ -21,7 +21,8 @@ public class FlatteningData {
         List<Department> departments = Arrays.asList(dept1, dept2, dept3);
 
         //Get a unique list of all employee names.
-        List<String> uniqueEmployee = departments.stream().flatMap(dept -> dept.getEmployees().stream())
+        List<String> uniqueEmployee = departments.stream()
+                .flatMap(dept -> dept.getEmployees().stream())
                 .map(Employee::getName)
                 .distinct().collect(Collectors.toList());
 
