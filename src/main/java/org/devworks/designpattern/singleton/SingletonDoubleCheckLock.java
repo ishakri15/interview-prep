@@ -1,4 +1,4 @@
-package org.devworks.designpattern;
+package org.devworks.designpattern.singleton;
 public class SingletonDoubleCheckLock {
     public static SingletonDoubleCheckLock singleton;
     private SingletonDoubleCheckLock () {}
