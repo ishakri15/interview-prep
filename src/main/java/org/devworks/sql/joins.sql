@@ -36,4 +36,17 @@ select c.country, sum(o.amount) as total_amount from customers c
 join orders o on c.customer_id = o.customer_id
 group by c.country
 order by total_amount desc
-limit 1
+limit 1;
+
+--Question: Which customers have placed more than one order? List their customer_id and the number of orders they've placed.
+
+select c.first_name || ' ' || c.last_name as fullname, count(o.item) as order_count
+from customers c
+join orders o on c.customer_id = o.customer_id
+group by fullname
+having order_count > 1;
+
+--Question: For each country, how many customers are aged 25 or older?
+select c.country, count(c.age) as greater_than_25_count from customers c
+where c.age >= 25
+group by c.country
