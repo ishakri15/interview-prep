@@ -9,19 +9,20 @@ import java.util.Arrays;
 // 1.Task: Find and return an integer representing the minimum number of operations required
 // to convert the array into a valid permutation of size N. in java
 public class Permutations {
-    public static int transformArray(int arr[]){
-        Arrays.sort(arr);
-        int op = 0;
-        for(int i=0; i<arr.length; i++){
-            if(arr[i] < i+1){
-                op += (i+1 - arr[i]);
-                arr[i] = i+1;
-            }
-        }
-        return op;
+  public static int transformArray(int arr[]) {
+    Arrays.sort(arr);
+    int op = 0;
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] < i + 1) {
+        op += (i + 1 - arr[i]);
+        arr[i] = i + 1;
+      }
     }
-    public static void main(String[] args) {
-        int arr[] = {1,1,3,3,4};
-        System.out.println(transformArray(arr));
-    }
+    return op;
+  }
+
+  public static void main(String[] args) {
+    int arr[] = {1, 1, 3, 3, 4};
+    System.out.println(transformArray(arr));
+  }
 }
