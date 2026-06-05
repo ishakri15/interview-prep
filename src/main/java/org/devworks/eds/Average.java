@@ -1,6 +1,7 @@
 package org.devworks.eds;
 
 import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -28,5 +29,13 @@ public class Average {
                 Collectors.groupingBy(
                     Employee::getGender, Collectors.averagingDouble(Employee::getSalary)));
     System.out.print(avgAgeBySalary);
+
+    // calculate average salary, total salary and max
+    // using Collectors.summarizingDouble
+    DoubleSummaryStatistics collect =
+        employees.stream().collect(Collectors.summarizingDouble(Employee::getSalary));
+    System.out.print("Average salary: " + collect.getAverage());
+    System.out.print("Total sum of salary: " + collect.getSum());
+    System.out.print("Maximum salary: " + collect.getMax());
   }
 }
