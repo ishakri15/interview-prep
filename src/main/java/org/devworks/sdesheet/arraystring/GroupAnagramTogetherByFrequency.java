@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GroupAnagramTogether {
+public class GroupAnagramTogetherByFrequency {
 
   private static String getFrequencyString(String s) {
     int[] freq = new int[25];
