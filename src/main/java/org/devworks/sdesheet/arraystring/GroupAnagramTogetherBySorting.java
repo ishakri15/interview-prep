@@ -32,7 +32,6 @@ public class GroupAnagramTogetherBySorting {
     }
 
     return new ArrayList<>(sortedStringHashMap.values());
-
   }
 
   public static void main(String[] args) {
